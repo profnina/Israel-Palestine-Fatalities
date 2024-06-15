@@ -24,14 +24,100 @@
         <link rel="stylesheet" href="assets/css/owl.css">
         <link rel="stylesheet" href="assets/css/fontawesome copy.css">
 
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+        
+        <!-- Swiper JS -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <style>
+            .hero-section {
+                padding: 25px 25px;
+            }
+            .containers {
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
+            }
+            .card {
+                border: none;
+                border-radius: 10px;
+                overflow: hidden;
+                width: 100%; /* Ensure the card uses full width of the container */
+                height: auto;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            .swiper-container {
+                width: 100%; /* Full width of the container */
+                height: 550px;
+                position: relative;
+            }
+            .swiper-slide {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: auto; /* Ensure slides take full width */
+                flex: 1 0 auto; /* Flex grow and shrink */
+            }
+            .swiper-slide img {
+                width: 150%; /* Increase image width significantly */
+                height: 100%;
+                object-fit: cover;
+                border-radius: 10px; /* Ensure images fit within card boundaries */
+            }
+            .carousel-caption {
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                width: 600px;
+                transform: translateX(-50%);
+                background: rgba(0, 0, 0, 0.5);
+                padding: 10px 20px; /* Adjust padding for top/bottom 10px, left/right 20px */
+                border-radius: 10px;
+                color: #fff;
+                text-align: center;
+            }
+            .caption-content {
+                background: rgba(0, 0, 0, 0.5);
+                padding: 10px;
+                border-radius: 5px;
+                color: #fff;
+            }
+            .swiper-button-next, .swiper-button-prev {
+                color: #fff;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 75px;
+                height: 75px;
+                background: rgba(0, 0, 0, 0.5); /* Background color for the buttons */
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .swiper-button-prev {
+                left: 10px;
+            }
+            .swiper-button-next {
+                right: 10px;
+            }
+            .swiper-pagination-bullet {
+                background: #fff;
+            }
+            
+        </style>
+
+
 
     </head>
     
     <body id="section_1">
 
-        <header class="site-header">
+       <!--<header class="site-header">
             <div class="container">
                 <div class="row">
+                  ------ contact-----
                     
                     <div class="col-lg-8 col-12 d-flex flex-wrap">
                         <p class="d-flex me-4 mb-0">
@@ -74,18 +160,19 @@
 
                 </div>
             </div>
-        </header>
+        </header>--> 
 
         <nav class="navbar navbar-expand-lg bg-light shadow-lg">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
                     <img src="images/logo palestine.jpg" class="logo img-fluid" alt="">
                     <span>
-                        Fatalities in Israel-Palestine Dashboard
+                        Fatalities in Israel-Palestine
                         <small>Mapping Tragedy: Exploring Fatalities</small>
                     </span>
                 </a>
 
+<!--Navigation-->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -101,18 +188,23 @@
                         </li>
 
                         <li class="nav-item">
+                            <!-- Update the href to point to the correct section ID -->
+                            <a class="nav-link" href="#section_8" onclick="scrollToLatestNews()">News</a>
+                        </li>
+
+                        <li class="nav-item">
                             <a class="nav-link click-scroll" href="#section_3">NGOs</a>
                         </li>
 
-                     
-
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_6">Contact</a>
+                            <a class="nav-link click-scroll" href="#section_4">Contact</a>
                         </li>
 
                         <li class="nav-item ms-3">
-                            <a class="nav-link custom-btn custom-border-btn click-scroll" href="section_5">Dashboard</a>
+                            <a class="nav-link custom-btn custom-border-btn click-scroll" href="#section_5">Dashboard</a>
                         </li>
+
+                        
                     </ul>
                 </div>
             </div>
@@ -132,147 +224,273 @@
   </div>
   <!-- ***** Preloader End ***** -->
 
-            <section class="hero-section hero-section-full-height">
-                <div class="container-fluid">
-                    <div class="row">
+  <!--Carousel-->
 
-                        <div class="col-lg-12 col-12 p-0">
-                            <div id="hero-slide" class="carousel carousel-fade slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="images/main 1.png" class="carousel-image img-fluid" alt="...">
-                                        
-                                        <div class="carousel-caption d-flex flex-column justify-content-end">
-                                            <h1>Unity</h1>
-                                            
-                                            <p>embodies unity amidst the struggle for liberation and justice</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="carousel-item">
-                                        <img src="images/main 2.png" class="carousel-image img-fluid" alt="..">
-                                        
-                                        <div class="carousel-caption d-flex flex-column justify-content-end">
-                                            <h1>Freedom</h1>
-                                            
-                                            <p>the aspirations for liberation and a brighter future</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="carousel-item">
-                                        <img src="images/main 3.png" class="carousel-image img-fluid" alt="...">
-                                        
-                                        <div class="carousel-caption d-flex flex-column justify-content-end">
-                                            <h1>Palestine</h1>
-                                            
-                                            <p>Building Justice and Hope Together</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <button class="carousel-control-prev" type="button" data-bs-target="#hero-slide" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-
-                                <button class="carousel-control-next" type="button" data-bs-target="#hero-slide" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
+  <section class="hero-section">
+    <div class="containers">
+        <!-- Card -->
+        <div class="card">
+            <div class="card-body p-0">
+                <!-- Swiper -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="images/main 2.png" alt="Freedom">
+                            <div class="carousel-caption">
+                                <h1>Freedom</h1>
+                                <p><b>The aspirations for liberation</b></p>
                             </div>
                         </div>
-
+                        <div class="swiper-slide">
+                            <img src="images/main 1.png" alt="Unity">
+                            <div class="carousel-caption">
+                                <h1>Unity</h1>
+                                <p><b>Embodies unity amidst the struggle</b></p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/main 2.png" alt="Freedom">
+                            <div class="carousel-caption">
+                                <h1>Freedom</h1>
+                                <p><b>The aspirations for liberation</b></p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/main 3.png" alt="Palestine">
+                            <div class="carousel-caption">
+                                <h1>Palestine</h1>
+                                <p><b>Building Justice and Hope</b></p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </section>
-
-
-        
-
-          <!----------------------------------------
-        Section 5
-    --------------------------------------------------->
-                
-
-                <section class="section-padding section-bg" id="section_5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 col-12 text-center mx-auto">
-                <h2 class="mb-5">Fatalities Dashboard</h2>
-            </div>
-            <div class="col-lg-10 col-12 mx-auto">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe title="8_6 FYP DASHBOARD" width="1100" height="550" src="https://app.powerbi.com/view?r=eyJrIjoiNjhiYmNmOTUtYTY0NC00MDYyLTg3ZTktODI3YzE3NjE1ZDQ0IiwidCI6ImNkY2JiMGUyLTlmZWEtNGY1NC04NjcwLTY3MjcwNzc5N2FkYSIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- Bootstrap JS (for avatars) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        spaceBetween: 20, // Adjust space between slides to show part of the next slide
+        centeredSlides: true, // Center the active slide
+        slidesPerView: 1.2, // Adjust to show a bit of the next slide on both sides
+        effect: 'slide',
+        loop: true, // Enable looping
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 2000, // Delay between slides in milliseconds (3000ms = 3 seconds)
+            disableOnInteraction: false, // Keep autoplay running after user interactions
+        },
+    });
+</script>
+
+
+
+
  <!----------------------------------------
-        Section 2
+        Section 2 - About
     --------------------------------------------------->
 
-    <section class="section-padding" id="section_2">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-12 col-12 text-center mb-4">
-                    <h2>About Website</h2>
+    <style>
+        .section-paddings {
+            padding: 40px 0; /* Adjust padding to reduce vertical space */
+        }
+        .custom-margins {
+            padding-left: 60px;  /* Adjust margin as needed */
+            padding-right: 60px; /* Adjust margin as needed */
+        }
+    
+    </style>
+    
+    <section class="section-paddings section-bg custom-margins" id="section_2">
+        <div class="row">
+            <div class="col-lg-12 col-12 text-center mb-2">
+                <h2>About Website</h2>
+            </div>
+    
+            <div class="col-lg-6 col-12 mb-3 mb-lg-0 ">
+                <img src="images/palestinian people.jpg" class="custom-text-box-image img-fluid" alt="" style="max-height: 550px;">
+            </div>
+    
+            <div class="col-lg-6 col-12 ">
+                <div class="custom-text-box">
+                    <h2 class="mb-0">Palestine's Story</h2>
+    
+                    <h5 class="mb-0">Unity in Struggle, Hope in Freedom</h5>
+    
+                    <p class="mb-0">Palestine, situated in the Middle East, has endured prolonged conflict and political instability. It remains a focal point of contention between Israelis and Palestinians, with ongoing efforts to achieve Palestinian statehood and resolve the Israeli-Palestinian conflict amidst complex geopolitical dynamics.</p>
                 </div>
-
-                        <div class="col-lg-6 col-12 mb-5 mb-lg-0">
-                            <img src="images/palestinian people.jpg" class="custom-text-box-image img-fluid" alt="" style="max-height: 590px";>
+                
+                <div class="row ">
+                    <div class=" col-12 ">
+                        <div class="custom-text-box ">
+                            <h5 class="mb-0">My Mission</h5>
+    
+                            <p>By constructing a dashboard that consolidates data on fatalities in the Israel-Palestine conflict:</p>
+    
+                            <ul class="custom-list mt-2">
+                                <li class="custom-list-item d-flex">
+                                    <i class="bi-check custom-text-box-icon "></i>
+                                    Spread the awareness of the tragedy
+                                </li>
+    
+                                <li class="custom-list-item d-flex">
+                                    <i class="bi-check custom-text-box-icon "></i>
+                                    Increasing Aid for Palestine
+                                </li>
+                            </ul>
                         </div>
-
-                        <div class="col-lg-6 col-12">
-                            <div class="custom-text-box">
-                                <h2 class="mb-2">Palestine's Story</h2>
-
-                                <h5 class="mb-3">Unity in Struggle, Hope in Freedom</h5>
-
-                                <p class="mb-0">Palestine, situated in the Middle East, has endured prolonged conflict and political instability. It remains a focal point of contention between Israelis and Palestinians, with ongoing efforts to achieve Palestinian statehood and resolve the Israeli-Palestinian conflict amidst complex geopolitical dynamics.</p>
-                            </div>
-                            
-                            <div class="row">
-                               <!-- <div class="col-lg-6 col-md-6 col-12"> -->
-                                    <div class="custom-text-box">
-                                        <h5 class="mb-3">My Mission</h5>
-
-                                        <p>By constructing a dashboard that consolidates data on fatalities in the Israel-Palestine conflict:</p>
-
-                                        <ul class="custom-list mt-2">
-                                            <li class="custom-list-item d-flex">
-                                                <i class="bi-check custom-text-box-icon "></i>
-                                                Spread the awareness of the tragedy
-                                            </li>
-
-                                            <li class="custom-list-item d-flex">
-                                                <i class="bi-check custom-text-box-icon "></i>
-                                                Increasing Aid for Palestine
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                     
-                        </div>
-
                     </div>
                 </div>
-            </section>
+        </div>
+    </section>
+
+   <!----------------------------------------
+        Section 5 - dashboard
+    --------------------------------------------------->
+                
+
+    <style>
+        .dashboard-containers {
+            display: flex;
+            justify-content: center;
+            max-width: 90%; /* Adjust the width as needed */
+            margin: 0 auto;
+        }
+    
+        </style>
+    
+    <section class="section-paddings" id="section_5">
+      
+                <div class="col-lg-10 col-12 text-center mx-auto">
+                    <h2 class="mb-2">Fatalities Dashboard</h2>
+                </div>
+                <div class="col-lg-10 col-12 mx-auto dashboard-containers">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe title="8_6 FYP DASHBOARD" class="dashboard-iframe" width="950" height="570" src="https://app.powerbi.com/view?r=eyJrIjoiNjhiYmNmOTUtYTY0NC00MDYyLTg3ZTktODI3YzE3NjE1ZDQ0IiwidCI6ImNkY2JiMGUyLTlmZWEtNGY1NC04NjcwLTY3MjcwNzc5N2FkYSIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+                    </div>
+                </div>
+            
+    </section>
+    
+    
+
+    <!-------------------
+     Latest News Section 
+     ---------------------------->
+     
+
+<section  class="section-padding section-bg custom-margin" id="section_8">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-12 text-center mb-4">
+                <h2>Latest News</h2>
+            </div>
+
+            <!-- News Item 3 -->
+            <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                <div class="custom-block-wrap">
+                    <a href="https://example.com/news3">
+                        <img src="images/news3.webp" class="custom-block-image img-fluid" alt="News 3">
+                    </a>
+                    <div class="custom-block">
+                        <div class="custom-block-body">
+                            <h5 class="mb-0">Eight Israeli soldiers killed in Hamas ambush in Rafah</h5>
+                            <p><i>15 June 2024</i></p>
+                            <p>The Israeli military said eight soldiers were killed in southern Gaza Saturday "in operational activity", while Israeli ...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News Item 1 -->
+            <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                <div class="custom-block-wrap">
+                    <a href="https://www.aljazeera.com/news/liveblog/2024/6/14/israels-war-on-gaza-live-no-ceasefire-deal-soon-us-president-biden">
+                        <img src="images/news1.jpg" class="custom-block-image img-fluid" alt="News 1">
+                    </a>
+                    <div class="custom-block">
+                        <div class="custom-block-body">
+                            <h5 class="mb-0">Israel’s war on Gaza: 25 killed in Gaza today, including infant</h5>
+                            <p><i>15 June 2024</i></p>
+                            <p>Medical sources tell Al Jazeera that 25 Palestinians were killed in Gaza on Friday. An infant was killed in a strike on ...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News Item 2 -->
+            <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                <div class="custom-block-wrap">
+                    <a href="https://www.cgm.com.my/latest-news/ribuan-penduduk-tebing-barat-tunaikan-haji-namun-tidak-penduduk-gaza">
+                        <img src="images/news2.jpg" class="custom-block-image img-fluid" alt="News 2">
+                    </a>
+                    <div class="custom-block">
+                        <div class="custom-block-body">
+                            <h5 class="mb-0">West Bank Residents Perform Hajj, But Not Gaza Residents</h5>
+                            <p><i>14 June 2024</i></p>
+                            <p>Pilgrims from Gaza are unable to travel to Mecca due to the takeover and closure of the Rafah-Egypt border by ...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript for smooth scrolling -->
+<script>
+    function scrollToLatestNews() {
+        // Get the target element
+        const target = document.querySelector('#section_8');
+
+        // Calculate the offset to adjust the scroll position
+        const offset = 80; // Adjust this value as needed
+
+        // Scroll to the target element
+        window.scrollTo({
+            top: target.offsetTop - offset,
+            behavior: 'smooth' // Optional smooth scrolling
+        });
+    }
+</script>
+<!-- Bootstrap JS and any other scripts (if needed) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
-           
 
-            <section class="section-padding" id="section_3">
-                <div class="container">
+
+
+        
+             <!--Governemtn organization section-->
+
+             <section class="section-paddings" id="section_3">
+                <div class="container ">
                     <div class="row">
 
                         <div class="col-lg-12 col-12 text-center mb-4">
                             <h2>Non-Government Organizations</h2>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0 ">
                             <div class="custom-block-wrap">
                                 <img src="images/myCare mission.jpg" class="custom-block-image img-fluid" alt="">
 
@@ -331,147 +549,102 @@
                 </div>
             </section>
 
+
+
+            
+
       
 
-                                        <div class="carousel-item">
-                                            <div class="carousel-caption">
-                                                <h4 class="carousel-title">Sed leo nisl, posuere at molestie ac, suscipit auctor mauris quis metus tempor orci</h4>
-
-                                                <small class="carousel-name"><span class="carousel-name-title">Thomas</span>, Partner</small>
-                                            </div>
-                                        </div>
-
-                                        <div class="carousel-item">
-                                            <div class="carousel-caption">
-                                                <h4 class="carousel-title">Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg kohm tokito charity theme</h4>
-
-                                                <small class="carousel-name"><span class="carousel-name-title">Jane</span>, Advisor</small>
-                                            </div>
-                                        </div>
-
-                                        <div class="carousel-item">
-                                            <div class="carousel-caption">
-                                                <h4 class="carousel-title">Sed leo nisl, posuere at molestie ac, suscipit auctor mauris quis metus tempor orci</h4>
-
-                                                <small class="carousel-name"><span class="carousel-name-title">Bob</span>, Entreprenuer</small>
-                                           </div>
-                                        </div>
-
-                                          <ol class="carousel-indicators">
-                                               <li data-bs-target="#testimonial-carousel" data-bs-slide-to="0" class="active">
-                                                    <img src="images/avatar/portrait-beautiful-young-woman-standing-grey-wall.jpg" class="img-fluid rounded-circle avatar-image" alt="avatar">
-                                               </li>
-
-                                               <li data-bs-target="#testimonial-carousel" data-bs-slide-to="1" class="">
-                                                    <img src="images/avatar/portrait-young-redhead-bearded-male.jpg" class="img-fluid rounded-circle avatar-image" alt="avatar">
-                                               </li>
-
-                                               <li data-bs-target="#testimonial-carousel" data-bs-slide-to="2" class="">
-                                                    <img src="images/avatar/pretty-blonde-woman-wearing-white-t-shirt.jpg" class="img-fluid rounded-circle avatar-image" alt="avatar">
-                                               </li>
-
-                                               <li data-bs-target="#testimonial-carousel" data-bs-slide-to="3" class="">
-                                                    <img src="images/avatar/studio-portrait-emotional-happy-funny.jpg" class="img-fluid rounded-circle avatar-image" alt="avatar">
-                                               </li>
-                                          </ol>
-
-                                 </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
+                               
         
+<!--Footer-->
 
+        <section class="section-paddings section-bg custom-margins" id="section_4">
+            <div class="container">
+                <div class="row">
 
-            <section class="contact-section section-padding" id="section_6">
-                <div class="container">
-                    <div class="row">
+                    <div class="col-lg-4 col-11 ms-auto mb-5 mb-lg-0">
+                        <div class="contact-info-wrap">
+                            <h2>Get in touch</h2>
 
-                        <div class="col-lg-4 col-11 ms-auto mb-5 mb-lg-0">
-                            <div class="contact-info-wrap">
-                                <h2>Get in touch</h2>
+                            <div class="contact-image-wrap d-flex flex-wrap">
+                                <img src="images/avatar/me.jpg" class="img-fluid avatar-image" alt="me">
 
-                                <div class="contact-image-wrap d-flex flex-wrap">
-                                    <img src="images/avatar/me.jpg" class="img-fluid avatar-image" alt="me">
+                                <div class="d-flex flex-column justify-content-center ms-3">
+                                    <p class="mb-0">Qistina Rosdi</p>
+                                    <p class="mb-0"><strong>Final Year IT Student</strong></p>
+                                </div>  
+                            </div>
 
-                                    <div class="d-flex flex-column justify-content-center ms-3">
-                                        <p class="mb-0">Qistina Rosdi</p>
-                                        <p class="mb-0"><strong>Final Year IT Student</strong></p>
-                                    </div>  
-                                </div>
+                            <div class="contact-info">
 
-                                <div class="contact-info">
+                                <p class="d-flex mb-2">
+                                    <i class="bi-geo-alt me-2"></i>
+                                    Universiti Teknologi MARA, Perlis
+                                </p>
 
-                                    <p class="d-flex mb-2">
-                                        <i class="bi-geo-alt me-2"></i>
-                                        Universiti Teknologi MARA, Perlis
-                                    </p>
+                                <p class="d-flex mb-2">
+                                    <i class="bi-telephone me-2"></i>
 
-                                    <p class="d-flex mb-2">
-                                        <i class="bi-telephone me-2"></i>
+                                    <a href="tel: 011-61135841">
+                                        011-61135841
+                                    </a>
+                                </p>
 
-                                        <a href="tel: 011-61135841">
-                                            011-61135841
-                                        </a>
-                                    </p>
+                                <p class="d-flex">
+                                    <i class="bi-envelope me-2"></i>
 
-                                    <p class="d-flex">
-                                        <i class="bi-envelope me-2"></i>
-
-                                        <a href="qistinarosdi02@gmail.com">
-                                            qistinarosdi02@gmail.com
-                                        </a>
-                                    </p>
-                                    <div id="map">
-                                        <!-- You just need to go to Google Maps for your own map point, and copy the embed code from Share -> Embed a map section -->
-                                        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d56866.50619975419!2d101.52709611991119!3d3.685609751501489!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2smy!4v1712621611887!5m2!1sen!2smy" width="100%" height="250px" frameborder="0" style="border:0; border-radius: 15px; position: relative; z-index: 2;" allowfullscreen=""></iframe>
-                                    </div>  
-                                </div>
+                                    <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl&pli=1#inbox?compose=CllgCJlLWdGCwRksMLdlQZdkQPKrDRtjJxpqjxklgCXCWdbqLKWsBPqrcDvhrwgwTbvgHPFzqsB">
+                                        qistinarosdi02@gmail.com
+                                    </a>
+                                </p>
+                                <div id="map">
+                                    <!-- You just need to go to Google Maps for your own map point, and copy the embed code from Share -> Embed a map section -->
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15858.26352428866!2d100.26749934385228!3d6.4497378966654395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ca295f1a2ba0f%3A0xb6486842508be519!2sUitm%20Arau%2C%2002600%20Arau%2C%20Perlis!5e0!3m2!1sen!2smy!4v1718472548606!5m2!1sen!2smy" width="100%" height="250px" frameborder="0" style="border:0; border-radius: 15px; position: relative; z-index: 2;" allowfullscreen=""></iframe>
+                                </div>  
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-lg-5 col-12 mx-auto">
-                            <form class="custom-form contact-form" action="#" method="post" role="form">
-                                <h2>Contact form</h2>
+                    <div class="col-lg-5 col-12 mx-auto">
+                        <form class="custom-form contact-form" action="https://mail.google.com/mail/u/0/?tab=rm&ogbl&pli=1#inbox?compose" method="post" role="form">
+                            <h2>Contact form</h2>
 
-                                <p class="mb-4">Or, you can just send an email:
-                                    <a href="#">qistinarosdi02@gmail.com</a>
-                                </p>
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="text" name="first-name" id="first-name" class="form-control" placeholder="first name" required>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="text" name="last-name" id="last-name" class="form-control" placeholder="last name" required>
-                                    </div>
+                            <p class="mb-4">Or, you can just send an email:
+                                <a href="qistinarosdi02@gmail.com">qistinarosdi02@gmail.com</a>
+                            </p>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <input type="text" name="first-name" id="first-name" class="form-control" placeholder="first name" required>
                                 </div>
 
-                                <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="email" required>
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <input type="text" name="last-name" id="last-name" class="form-control" placeholder="last name" required>
+                                </div>
+                            </div>
 
-                                <textarea name="message" rows="5" class="form-control" id="message" placeholder="what can I help you?"></textarea>
+                            <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="email" required>
 
-                                <button type="submit" class="form-control">Send Message</button>
-                            </form>
-                        </div>
+                            <textarea name="message" rows="5" class="form-control" id="message" placeholder="what can I help you?"></textarea>
 
+                            <button type="submit" class="form-control">Send Message</button>
+                        </form>
                     </div>
+
                 </div>
-            </section>
-        </body>
+            </div>
+        </section>
+    
 
        <footer class="site-footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-10 col-12 mb-4">
+                    <div class="col-lg-10 col-12 mb-0">
                         <img src="images/logo_palestine-removebg.png" class="logo img-fluid" alt="">
                     </div>
 
-                 
                     
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <div class="col-lg-4 col-md-6 col-12 mb-0">
                 
                         <h5 class="site-footer-title mb-3">Contact Infomation</h5>
 
@@ -486,9 +659,8 @@
                         <p class="text-white d-flex">
                             <i class="bi-envelope me-2"></i>
 
-                            <a href="mailto:info@yourgmail.com" class="site-footer-link">
-                                qistinarosdi02@gmail.com
-                            </a>
+                            <a href="#" class="site-footer-link">qistinarosdi02@gmail.com</a>
+
                         </p>
 
                         <p class="text-white d-flex mt-3">
@@ -496,12 +668,12 @@
                             Universiti Teknologi MARA, Kampus Arau, Perlis
                         </p>
 
-                        <a href="https://maps.app.goo.gl/6si4jb5jvZPwcch68" class="custom-btn btn">Get Direction</a>
+                        <a href="https://maps.app.goo.gl/k2zMLgqqamEp29ot8" class="custom-btn btn">Get Direction</a>
                     </div>
                 </div>
             </div>
             
-
+        </body>
             <div class="site-footer-bottom">
                 <div class="container">
                     <div class="row">
@@ -510,7 +682,7 @@
                             <p class="copyright-text mb-0">Copyright © 2024 <a href="#">Nur Qistina Rosdi</a>
                         </div>
                         
-                        <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
+                        <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-end align-items-center mx-auto">
                             <ul class="social-icon">
                                 <li class="social-icon-item">
                                     <a href="https://twitter.com/qistina_rosdi" class="social-icon-link bi-twitter"></a>
