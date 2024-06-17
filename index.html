@@ -105,114 +105,97 @@
             .swiper-pagination-bullet {
                 background: #fff;
             }
+            .nav-link.active {
+                color: #ff0000; /* Change this to the color you want */
+            }
+                .nav-link.custom-btn.custom-border-btn {
+                transition: background-color 0.3s;
+            }
+
+            .nav-link.custom-btn.custom-border-btn:hover,
+            .nav-link.custom-btn.custom-border-btn.active {
+                background-color: #5BC1AC; /* Change this to the green color you want */
+                border: #5BC1AC;
+                color: white; /* Ensure the text is readable against the green background */
+            }
+
+
+
+
             
         </style>
 
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get all navigation links
+        const navLinks = document.querySelectorAll('.nav-link');
 
-    </head>
-    
-    <body id="section_1">
+        navLinks.forEach(link => {
+            // Add click event listener to each link
+            link.addEventListener('click', function () {
+                // Remove the active class from all links
+                navLinks.forEach(nav => nav.classList.remove('active'));
 
-       <!--<header class="site-header">
-            <div class="container">
-                <div class="row">
-                  ------ contact-----
-                    
-                    <div class="col-lg-8 col-12 d-flex flex-wrap">
-                        <p class="d-flex me-4 mb-0">
-                            <i class="bi-geo-alt me-2"></i>
-                            Universiti Teknologi MARA, Kampus Arau
-                        </p>
+                // Add the active class to the clicked link
+                this.classList.add('active');
+            });
+        });
+    });
+</script>
 
-                        <p class="d-flex mb-0">
-                            <i class="bi-envelope me-2"></i>
 
-                            <a href="mailto:info@company.com">
-                                qistinarosdi02@gmail.com
-                            </a>
-                        </p>
-                    </div>
 
-                    <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
-                        <ul class="social-icon">
-                            <li class="social-icon-item">
-                                <a href="https://twitter.com/qistina_rosdi" class="social-icon-link bi-twitter"></a>
-                            </li>
+<nav class="navbar navbar-expand-lg bg-light shadow-lg">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/logo palestine.jpg" class="logo img-fluid" alt="">
+            <span>
+                Fatalities in Israel-Palestine
+                <small>Mapping Tragedy: Exploring Fatalities</small>
+            </span>
+        </a>
 
-                            <li class="social-icon-item">
-                                <a href="https://www.facebook.com/profile.php?id=100008234494043" class="social-icon-link bi-facebook"></a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="https://www.instagram.com/zaahhraa_7/" class="social-icon-link bi-instagram"></a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="https://www.youtube.com/channel/UCKRcq7n3_qgutoEGXS_liuw" class="social-icon-link bi-youtube"></a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="https://wa.me/601161135841" class="social-icon-link bi-whatsapp"></a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </header>--> 
-
-        <nav class="navbar navbar-expand-lg bg-light shadow-lg">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="images/logo palestine.jpg" class="logo img-fluid" alt="">
-                    <span>
-                        Fatalities in Israel-Palestine
-                        <small>Mapping Tragedy: Exploring Fatalities</small>
-                    </span>
-                </a>
-
+       
+        
 <!--Navigation-->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#top">Home</a>
-                        </li>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link click-scroll" href="#top">Home</a>
+                </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_2">About</a>
-                        </li>
+                <li class="nav-item">
+                    <a class="nav-link click-scroll" href="#section_about " onclick="scrollToLatestAbout()">About</a>
+                </li>
 
-                        <li class="nav-item">
-                            <!-- Update the href to point to the correct section ID -->
-                            <a class="nav-link" href="#section_8" onclick="scrollToLatestNews()">News</a>
-                        </li>
+                <li class="nav-item">
+                    <!-- Update the href to point to the correct section ID -->
+                    <a class="nav-link" href="#section_news" onclick="scrollToLatestNews()">News</a>
+                </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_3">NGOs</a>
-                        </li>
+                <li class="nav-item">
+                    <a class="nav-link click-scroll" href="#section_ngo" onclick="scrollToLatestNgo()">NGOs</a>
+                </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_4">Contact</a>
-                        </li>
+                <li class="nav-item">
+                    <a class="nav-link click-scroll" href="#section_contact" onclick="scrollToLatestContact()">Contact</a>
+                </li>
 
-                        <li class="nav-item ms-3">
-                            <a class="nav-link custom-btn custom-border-btn click-scroll" href="#section_5">Dashboard</a>
-                        </li>
+                <li class="nav-item ms-3">
+                    <a class="nav-link custom-btn custom-border-btn click-scroll" href="https://app.powerbi.com/links/_mQxdW3jtK?ctid=cdcbb0e2-9fea-4f54-8670-672707797ada&pbi_source=linkShare" >Dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-                        
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <body>
-            <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
+ <!-- ***** Preloader Start ***** -->
+ <div id="js-preloader" class="js-preloader">
     <div class="preloader-inner">
       <span class="dot"></span>
       <div class="dots">
@@ -223,6 +206,14 @@
     </div>
   </div>
   <!-- ***** Preloader End ***** -->
+
+  
+
+    </head>
+    
+    <body>
+
+          
 
   <!--Carousel-->
 
@@ -318,7 +309,9 @@
     
     </style>
     
-    <section class="section-paddings section-bg custom-margins" id="section_2">
+    <section class="section-padding section-bg custom-margins" id="section_about">
+       <div class="container">
+             
         <div class="row">
             <div class="col-lg-12 col-12 text-center mb-2">
                 <h2>About Website</h2>
@@ -361,42 +354,12 @@
         </div>
     </section>
 
-   <!----------------------------------------
-        Section 5 - dashboard
-    --------------------------------------------------->
-                
-
-    <style>
-        .dashboard-containers {
-            display: flex;
-            justify-content: center;
-            max-width: 90%; /* Adjust the width as needed */
-            margin: 0 auto;
-        }
-    
-        </style>
-    
-    <section class="section-paddings" id="section_5">
-      
-                <div class="col-lg-10 col-12 text-center mx-auto">
-                    <h2 class="mb-2">Fatalities Dashboard</h2>
-                </div>
-                <div class="col-lg-10 col-12 mx-auto dashboard-containers">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe title="17_6 FINAL FYP DASHBOARD" class="dashboard-iframe" width="950" height="570" src="https://app.powerbi.com/view?r=eyJrIjoiYTg2NDkxYTAtY2RlYS00ZmU4LTg5ZjgtNTNlZmI4OGQ4MjBmIiwidCI6ImNkY2JiMGUyLTlmZWEtNGY1NC04NjcwLTY3MjcwNzc5N2FkYSIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
-                    </div>
-                </div>
-            
-    </section>
-    
-    
-
-    <!-------------------
+     <!-------------------
      Latest News Section 
      ---------------------------->
      
 
-<section  class="section-padding section-bg custom-margin" id="section_8">
+<section  class="section-padding section-bg custom-margin" id="section_news">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-12 text-center mb-4">
@@ -458,7 +421,63 @@
 <script>
     function scrollToLatestNews() {
         // Get the target element
-        const target = document.querySelector('#section_8');
+        const target = document.querySelector('#section_news');
+
+        // Calculate the offset to adjust the scroll position
+        const offset = 80; // Adjust this value as needed
+
+        // Scroll to the target element
+        window.scrollTo({
+            top: target.offsetTop - offset,
+            behavior: 'smooth' // Optional smooth scrolling
+        });
+    }
+    
+    function scrollToLatestAbout() {
+        // Get the target element
+        const target = document.querySelector('#section_about');
+
+        // Calculate the offset to adjust the scroll position
+        const offset = 80; // Adjust this value as needed
+
+        // Scroll to the target element
+        window.scrollTo({
+            top: target.offsetTop - offset,
+            behavior: 'smooth' // Optional smooth scrolling
+        });
+    }    
+
+        function scrollToLatestNgo() {
+        // Get the target element
+        const target = document.querySelector('#section_ngo');
+
+        // Calculate the offset to adjust the scroll position
+        const offset = 80; // Adjust this value as needed
+
+        // Scroll to the target element
+        window.scrollTo({
+            top: target.offsetTop - offset,
+            behavior: 'smooth' // Optional smooth scrolling
+        });
+    }
+
+    function scrollToLatestDashboard() {
+        // Get the target element
+        const target = document.querySelector('#section_dashboard');
+
+        // Calculate the offset to adjust the scroll position
+        const offset = 80; // Adjust this value as needed
+
+        // Scroll to the target element
+        window.scrollTo({
+            top: target.offsetTop - offset,
+            behavior: 'smooth' // Optional smooth scrolling
+        });
+    }
+
+    function scrollToLatestContact() {
+        // Get the target element
+        const target = document.querySelector('#section_contact');
 
         // Calculate the offset to adjust the scroll position
         const offset = 80; // Adjust this value as needed
@@ -479,11 +498,43 @@
 
 
 
+   <!----------------------------------------
+        Section 5 - dashboard
+    --------------------------------------------------->
+                
+
+    <style>
+        .dashboard-containers {
+            display: flex;
+            justify-content: center;
+            max-width: 90%; /* Adjust the width as needed */
+            margin: 0 auto;
+        }
+    
+        </style>
+    
+    <section class="section-padding" id="section_dashboard">
+      
+                <div class="col-lg-10 col-12 text-center mx-auto">
+                    <h2 class="mb-2">Fatalities Dashboard</h2>
+                </div>
+                <div class="col-lg-10 col-12 mx-auto dashboard-containers">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe title="17_6 FINAL FYP DASHBOARD" class="dashboard-iframe" width="950" height="570" src="https://app.powerbi.com/view?r=eyJrIjoiYTg2NDkxYTAtY2RlYS00ZmU4LTg5ZjgtNTNlZmI4OGQ4MjBmIiwidCI6ImNkY2JiMGUyLTlmZWEtNGY1NC04NjcwLTY3MjcwNzc5N2FkYSIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+                    </div>
+                </div>
+            
+    </section>
+    
+    
+
+   
+
         
              <!--Governemtn organization section-->
 
-             <section class="section-paddings" id="section_3">
-                <div class="container ">
+             <section class="section-padding" id="section_ngo">
+                <div class="container">
                     <div class="row">
 
                         <div class="col-lg-12 col-12 text-center mb-4">
@@ -550,19 +601,13 @@
             </section>
 
 
-
-            
-
-      
-
-                               
+                      
         
 <!--Footer-->
 
-        <section class="section-paddings section-bg custom-margins" id="section_4">
+        <section class="section-padding section-bg custom-margins" id="section_contact">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-4 col-11 ms-auto mb-5 mb-lg-0">
                         <div class="contact-info-wrap">
                             <h2>Get in touch</h2>
@@ -720,4 +765,52 @@
         <script src="js/custom.js"></script>
 
     </body>
+
+      <!--<header class="site-header">
+            <div class="container">
+                <div class="row">
+                  ------ contact-----
+                    
+                    <div class="col-lg-8 col-12 d-flex flex-wrap">
+                        <p class="d-flex me-4 mb-0">
+                            <i class="bi-geo-alt me-2"></i>
+                            Universiti Teknologi MARA, Kampus Arau
+                        </p>
+
+                        <p class="d-flex mb-0">
+                            <i class="bi-envelope me-2"></i>
+
+                            <a href="mailto:info@company.com">
+                                qistinarosdi02@gmail.com
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+                        <ul class="social-icon">
+                            <li class="social-icon-item">
+                                <a href="https://twitter.com/qistina_rosdi" class="social-icon-link bi-twitter"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="https://www.facebook.com/profile.php?id=100008234494043" class="social-icon-link bi-facebook"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="https://www.instagram.com/zaahhraa_7/" class="social-icon-link bi-instagram"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="https://www.youtube.com/channel/UCKRcq7n3_qgutoEGXS_liuw" class="social-icon-link bi-youtube"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="https://wa.me/601161135841" class="social-icon-link bi-whatsapp"></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </header>--> 
 </html>
